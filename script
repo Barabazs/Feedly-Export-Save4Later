@@ -18,7 +18,7 @@ function saveToFile() {
 // Loop through the DOM, grabbing the information from each bookmark
 map = jQuery(".entry.quicklisted").map(function(i, el) {
 var $el = jQuery(el);
-var regex = /published:(.*)\ --/i;
+var regex = /Published:(.*)(.*)/i;
 return {
 title: $el.attr("data-title"),
 url: $el.attr("data-alternate-link"),
