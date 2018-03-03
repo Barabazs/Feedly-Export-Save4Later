@@ -22,6 +22,7 @@ var regex = /Published:(.*)(.*)/i;
 return {
 title: $el.attr("data-title"),
 url: $el.attr("data-alternate-link"),
+summary: $el.find(".summary")[0].innerHTML,
 time: regex.exec($el.find("span.ago").attr("title"))[1]
 };
 }).get(); // Convert jQuery object into an array
