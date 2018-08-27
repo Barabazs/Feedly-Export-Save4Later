@@ -4,16 +4,17 @@ Simple script that exports a users "Saved For Later" list or all loaded entries 
 This was intended for use in the Google Chrome's "Inspector" tool so your mileage may vary if used in other contexts.
 The scripts should also work in Safari and Firefox.
 
-Format of JSON is as follows:  
-[  
-{  
-title: "Title",  
-url: "www.example.com/title",  
-summary: "Short summary",  
-time: "Sunday "  
-}  
+The format of JSON is as follows:  
+```json
+[
+  {
+  title: "Title",  
+  url: "www.example.com/title",  
+  summary: "Short summary",  
+  time: "Sunday "  
+  }  
 ]  
-
+```
 # How to use:
 1) Open up your browser.
 2) Login to Feedly and go to the "Saved For Later" list or any other feedpage.
@@ -28,4 +29,6 @@ time: "Sunday "
 
 
 
-Forked from [BradCrawford](https://gist.github.com/bradcrawford/7288411) and updated thanks to ShockwaveNN & Dexnero.
+# Thank you
+[BradCrawford](https://gist.github.com/bradcrawford/7288411) for the original script.  
+ShockwaveNN & Dexnero for their input.
