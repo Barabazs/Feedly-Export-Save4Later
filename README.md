@@ -11,7 +11,9 @@ The format of JSON is as follows:
   title: "Title",  
   url: "www.example.com/title",  
   summary: "Short summary",  
-  time: "Sunday "  
+  time: "Sunday ",
+  sourceTitle: "Example Source",
+  sourceUrl: "http://www.example.org"
   }  
 ]  
 ```

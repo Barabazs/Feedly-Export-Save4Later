@@ -23,7 +23,9 @@ function saveToFile() {
             title: $el.attr("data-title"),
             url: $el.attr("data-alternate-link"),
             summary: $el.find(".summary")[0].innerHTML,
-            time: regex.exec($el.find("span.ago").attr("title"))[1]
+            time: regex.exec($el.find("span.ago").attr("title"))[1],
+            sourceTitle: $el.find(".source")[0].innerHTML,
+            sourceUrl: $el.find(".source")[0].href
         };
     }).get(); // Convert jQuery object into an array
 
