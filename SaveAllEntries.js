@@ -1,38 +1,31 @@
-function loadJQuery() {
-    script = document.createElement('script');
-    script.setAttribute('src', 'https://code.jquery.com/jquery-3.3.1.min.js');
-    script.setAttribute('type', 'text/javascript');
-    script.onload = loadSaveAs;
-    document.getElementsByTagName('head')[0].appendChild(script);
-}
+let convertEntries = () => {
+    "use strict";
+    let target = [...document.getElementsByClassName("entry")];
+    let result = [];
+    target.forEach((element) => {
+        let regExpLiteral = /Published:.(.*)/i;
+        result.push({
+            title: element.getAttribute("data-title"),
+            url: element.getAttribute("data-alternate-link"),
+            summary: element.querySelectorAll(".summary")[0].innerHTML,
+            time: regExpLiteral.exec(element.querySelectorAll("span.ago")[0].title)[1],
+            sourceTitle: element.querySelectorAll(".source")[0].innerHTML,
+            sourceUrl: element.querySelectorAll(".source")[0].href,
+        });
+    });
+    return result;
+};
 
-function loadSaveAs() {
-    saveAsScript = document.createElement('script');
-    saveAsScript.setAttribute('src', 'https://cdn.rawgit.com/eligrey/FileSaver.js/5733e40e5af936eb3f48554cf6a8a7075d71d18a/FileSaver.js');
-    saveAsScript.setAttribute('type', 'text/javascript');
-    saveAsScript.onload = saveToFile;
-    document.getElementsByTagName('head')[0].appendChild(saveAsScript);
-}
+let saveToFile = (input) => {
+    "use strict";
+    let json = JSON.stringify(input, undefined, 2);
+    let blob = new Blob([json], { type: "text/plain;charset=utf-8" });
+    let downloadLink = document.createElement("a");
+    downloadLink.href = URL.createObjectURL(blob);
+    let fileName = "FeedlySavedForLater" + Date.now().toString() + ".json";
+    downloadLink.download = fileName;
+    downloadLink.click();
+    URL.revokeObjectURL(a.href);
+};
 
-function saveToFile() {
-    // Loop through the DOM, grabbing the information from each bookmark
-    map = jQuery(".entry").map(function (i, el) {
-        var $el = jQuery(el);
-        var regex = /Published:(.*)(.*)/i;
-        return {
-            title: $el.attr("data-title"),
-            url: $el.attr("data-alternate-link"),
-            summary: $el.find(".summary")[0].innerHTML,
-            time: regex.exec($el.find("span.ago").attr("title"))[1],
-            sourceTitle: $el.find(".source")[0].innerHTML,
-            sourceUrl: $el.find(".source")[0].href
-        };
-    }).get(); // Convert jQuery object into an array
-
-    // Convert to a nicely indented JSON string
-    json = JSON.stringify(map, undefined, 2);
-    var blob = new Blob([json], { type: "text/plain;charset=utf-8" });
-    saveAs(blob, "FeedlySavedForLater" + Date.now().toString() + ".txt");
-}
-
-loadJQuery()
+saveToFile(convertEntries());
