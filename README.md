@@ -38,3 +38,7 @@ The format of JSON is as follows:
 [BradCrawford](https://gist.github.com/bradcrawford/7288411) for the original snippet. [fkneist](https://github.com/fkneist) for the contribution.
 
 ShockwaveNN, Dexnero, selcukakbas & nazgul6 for their input.
+
+# Support
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T51XKUJ)
