@@ -25,7 +25,7 @@ let saveToFile = (input) => {
     let fileName = "FeedlySavedForLater" + Date.now().toString() + ".json";
     downloadLink.download = fileName;
     downloadLink.click();
-    URL.revokeObjectURL(a.href);
+    URL.revokeObjectURL(downloadLink.href);
 };
 
 saveToFile(convertEntries());
