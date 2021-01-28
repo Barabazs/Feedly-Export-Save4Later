@@ -35,7 +35,7 @@ The format of JSON is as follows:
 
 # Thank you
 
-[BradCrawford](https://gist.github.com/bradcrawford/7288411) for the original snippet. [fkneist](https://github.com/fkneist) for the contribution.
+[BradCrawford](https://gist.github.com/bradcrawford/7288411) for the original snippet. [fkneist](https://github.com/fkneist) and [daun](https://github.com/daun) for the contribution.
 
 ShockwaveNN, Dexnero, selcukakbas & nazgul6 for their input.
 
