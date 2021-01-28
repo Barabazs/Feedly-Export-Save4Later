@@ -9,8 +9,8 @@ let convertEntries = () => {
             url: element.getAttribute("data-alternate-link"),
             summary: element.querySelectorAll(".summary")[0].innerHTML,
             time: regExpLiteral.exec(element.querySelectorAll("span.ago")[0].title)[1],
-            sourceTitle: element.querySelectorAll(".source")[0].innerHTML,
-            sourceUrl: element.querySelectorAll(".source")[0].href,
+            sourceTitle: element.querySelectorAll(".entry__source")[0].innerHTML,
+            sourceUrl: element.querySelectorAll(".entry__source")[0].href,
         });
     });
     return result;
@@ -25,7 +25,7 @@ let saveToFile = (input) => {
     let fileName = "FeedlySavedForLater" + Date.now().toString() + ".json";
     downloadLink.download = fileName;
     downloadLink.click();
-    URL.revokeObjectURL(a.href);
+    URL.revokeObjectURL(downloadLink.href);
 };
 
 saveToFile(convertEntries());
