@@ -19,7 +19,7 @@ The format of JSON is as follows:
 ]
 ```
 
-# How to use:
+## How to use:
 
 1. Open up your browser.
 2. Login to Feedly and go to the "Saved For Later" list or any other feedpage.
@@ -28,17 +28,25 @@ The format of JSON is as follows:
 5. Inside the "Inspector" tool, click the "Console" tab.
 6. Paste the appropriate script into the console
 
-# Scripts
+## Scripts
 
 [SaveSavedEntries.js](SaveSavedEntries.js): use for "Saved For Later"  
 [SaveAllEntries.js](SaveAllEntries.js): use for any other page
 
-# Thank you
+## Thank you
 
 [BradCrawford](https://gist.github.com/bradcrawford/7288411) for the original snippet. [fkneist](https://github.com/fkneist) and [daun](https://github.com/daun) for the contribution.
 
 ShockwaveNN, Dexnero, selcukakbas & nazgul6 for their input.
 
-# Support
+
+## Donations
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T51XKUJ)
+
+|Ethereum|Bitcoin|
+|:-:	|:-:	|
+|0x6b78d3deea258914C2f4e44054d22094107407e5|bc1qvvh8s3tt97cwy20mfdttpwqw0vgsrrceq8zkmw|
+|![eth](https://raw.githubusercontent.com/Barabazs/Barabazs/master/.github/eth.png)|![btc](https://raw.githubusercontent.com/Barabazs/Barabazs/master/.github/btc.png)|
+
+
