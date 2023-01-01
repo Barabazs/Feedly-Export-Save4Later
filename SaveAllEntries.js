@@ -5,11 +5,11 @@ let convertEntries = () => {
   target.forEach((element) => {
     let regExpLiteral = /Published:.(.*)/i;
     result.push({
-      title: element.querySelector(".entry__title").innerHTML,
-      url: element.getAttribute("data-alternate-link"),
-      summary: element.querySelector(".summary").innerHTML,
+      title: element.querySelector(".EntryTitle").innerText,
+      url: element.querySelector("a:not(.entry__source)").href,
+      summary: element.querySelector(".EntrySummary").innerText,
       time: regExpLiteral.exec(element.querySelector("span.ago").title)[1],
-      sourceTitle: element.querySelector(".entry__source").innerHTML,
+      sourceTitle: element.querySelector(".entry__source").innerText,
       sourceUrl: element.querySelector(".entry__source").href,
     });
   });
