@@ -9,8 +9,8 @@ let convertEntries = () => {
       url: element.querySelector("a:not(.entry__source)").href,
       summary: element.querySelector(".EntrySummary").innerText,
       time: regExpLiteral.exec(element.querySelector("span.ago").title)[1],
-      sourceTitle: element.querySelector(".entry__source").innerText,
-      sourceUrl: element.querySelector(".entry__source").href,
+      sourceTitle: element.querySelector(".entry__source")?.innerText,
+      sourceUrl: element.querySelector(".entry__source")?.href,
     });
   });
   return result;
