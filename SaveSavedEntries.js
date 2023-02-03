@@ -1,6 +1,6 @@
 let convertEntries = () => {
   "use strict";
-  let target = [...document.getElementsByClassName("list-entries")];
+  let target = [...document.getElementsByClassName("entry")];
   let result = [];
   target.forEach((element) => {
     let regExpLiteral = /Published:.(.*)/i;
